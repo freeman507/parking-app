@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Comprar Créditos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-item>
+          <ion-label>Valor</ion-label>
+          <ion-select [(ngModel)]="value" (ngModelChange)="onChangeValue($event)">
+            <ion-option value="10">{{10 | currency:'BRL'}}</ion-option>
+            <ion-option value="20">{{20 | currency:'BRL'}}</ion-option>
+            <ion-option value="30">{{30 | currency:'BRL'}}</ion-option>
+            <ion-option value="40">{{40 | currency:'BRL'}}</ion-option>
+            <ion-option value="50">{{50 | currency:'BRL'}}</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button full [color]="value?'secondary':'light'" (tap)="buy()">Comprar</button>
+  </ion-toolbar>
+</ion-footer>
